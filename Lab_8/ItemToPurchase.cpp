@@ -1,6 +1,8 @@
 #include "stdafx.h"
 
 #include "ItemToPurchase.h"
+#include <iostream>
+#include <iomanip>
 
 ItemToPurchase::ItemToPurchase(string name, string description, double price, int quantity)
 {
@@ -24,3 +26,14 @@ int ItemToPurchase::GetQuantity() { return itemQuantity; }
 void ItemToPurchase::SetItemDescription(string description) { itemDescription = description; }
 
 string ItemToPurchase::GetItemDescription() { return itemDescription; }
+
+void ItemToPurchase::PrintCost()
+{
+	cout << setprecision(2) << fixed;
+	cout << itemName << " " << itemQuantity << " @ $" << itemPrice << " = $" << itemPrice * itemQuantity << endl;
+}
+
+void ItemToPurchase::PrintDescription()
+{
+	cout << itemName << ": " << itemDescription << endl;
+}

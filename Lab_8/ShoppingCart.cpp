@@ -3,6 +3,12 @@
 #include <iostream>
 using namespace std;
 
+ShoppingCart::ShoppingCart(string customerName, string dateCreated)
+{
+	this->customerName = customerName;
+	this->dateCreated = dateCreated;
+}
+
 string ShoppingCart::GetCustomerName() { return customerName; }
 
 string ShoppingCart::GetDateCreated() { return dateCreated; }
@@ -75,4 +81,4 @@ void ShoppingCart::PrintItemDescriptions()
 	{
 		items.at(i).PrintDescription();
 	}
-}
+} 

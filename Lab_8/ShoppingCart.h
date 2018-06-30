@@ -9,6 +9,7 @@ using namespace std;
 class ShoppingCart
 {
 	public:
+		ShoppingCart(string customerName = "none", string dateCreated = "January 1, 2016");
 		string GetCustomerName();
 		string GetDateCreated();
 		void AddItemToCart(ItemToPurchase);

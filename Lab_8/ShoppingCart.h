@@ -9,10 +9,10 @@ using namespace std;
 class ShoppingCart
 {
 	public:
-		string GetName();
-		string GetDate();
+		string GetCustomerName();
+		string GetDateCreated();
 		void AddItemToCart(ItemToPurchase);
-		void RemoveItemFromCart(string itemName);
+		void RemoveItemFromCart(string);
 		void UpdateItemQuantity(string, int);
 		int GetNumOfItems();
 		double GetTotalCost();

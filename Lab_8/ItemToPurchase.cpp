@@ -2,14 +2,7 @@
 
 #include "ItemToPurchase.h"
 
-ItemToPurchase::ItemToPurchase()
-{
-	itemName = "none";
-	itemPrice = 0.0;
-	itemQuantity = 0;
-}
-
-ItemToPurchase::ItemToPurchase(string name, double price, int quantity)
+ItemToPurchase::ItemToPurchase(string name, string description, double price, int quantity)
 {
 	itemName = name;
 	itemPrice = price;
@@ -27,3 +20,7 @@ double ItemToPurchase::GetPrice() { return itemPrice; }
 void ItemToPurchase::SetQuantity(int quantity) { itemQuantity = quantity; }
 
 int ItemToPurchase::GetQuantity() { return itemQuantity; }
+
+void ItemToPurchase::SetItemDescription(string description) { itemDescription = description; }
+
+string ItemToPurchase::GetItemDescription() { return itemDescription; }

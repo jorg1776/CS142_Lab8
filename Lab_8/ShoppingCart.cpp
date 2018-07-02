@@ -86,4 +86,6 @@ void ShoppingCart::PrintItemDescriptions()
 void ShoppingCart::PrintCartDescription()
 {
 	cout << customerName << "'s Shopping Cart - " << dateCreated << endl;
+	cout << "Number of Items: " << GetNumOfItems() << endl;
+	cout << endl;
 }

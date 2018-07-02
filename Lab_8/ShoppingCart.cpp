@@ -32,7 +32,7 @@ void ShoppingCart::UpdateItemQuantity(string itemName, int newQuantity)
 	{
 		if (items.at(i).GetName() == itemName)
 		{
-			items.at(i).SetQuantity = newQuantity;
+			items.at(i).SetQuantity(newQuantity);
 		}
 	}
 }

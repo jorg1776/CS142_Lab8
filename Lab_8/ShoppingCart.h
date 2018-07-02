@@ -19,6 +19,7 @@ class ShoppingCart
 		double GetTotalCost();
 		void PrintItemTotalsAndCosts();
 		void PrintItemDescriptions();
+		void PrintCartDescription();
 	private:
 		string customerName;
 		string dateCreated;

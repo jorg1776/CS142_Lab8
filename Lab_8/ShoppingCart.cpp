@@ -82,3 +82,8 @@ void ShoppingCart::PrintItemDescriptions()
 		items.at(i).PrintDescription();
 	}
 } 
+
+void ShoppingCart::PrintCartDescription()
+{
+	cout << customerName << "'s Shopping Cart - " << dateCreated << endl;
+}

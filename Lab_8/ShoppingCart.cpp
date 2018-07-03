@@ -125,7 +125,6 @@ void ShoppingCart::PrintItemDescriptions()
 	if (GetNumOfItems() > 0)
 	{
 		cout << "Item Descriptions" << endl;
-		cout << endl;
 
 		for (int i = 0; i < items.size(); i++)
 		{

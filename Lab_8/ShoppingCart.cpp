@@ -22,9 +22,9 @@ bool ShoppingCart::CheckCartForItem(string itemName)
 	{
 		if (items.at(i).GetName() == itemName)
 			return true;
-		else
-			return false;
 	}
+
+	return false;
 }
 
 void ShoppingCart::AddItemToCart(ItemToPurchase item) 
@@ -37,6 +37,7 @@ void ShoppingCart::AddItemToCart(ItemToPurchase item)
 
 void ShoppingCart::RemoveItemFromCart(string itemName) 
 {
+	bool isInCart;
 	for (int i = 0; i < items.size(); i++)
 	{
 		if (items.at(i).GetName() == itemName)
@@ -92,9 +93,14 @@ void ShoppingCart::PrintItemTotalsAndCosts()
 		{
 			items.at(i).PrintCost();
 		}
+
+		cout << endl;
+		cout << "Total: $" << GetTotalCost() << endl;
 	}
 	else
-		cout << "Shopping cart is empty" << endl << endl;
+		cout << "Shopping cart is empty" << endl;
+
+	cout << endl;
 }
 
 void ShoppingCart::PrintItemDescriptions() 
@@ -108,6 +114,8 @@ void ShoppingCart::PrintItemDescriptions()
 		{
 			items.at(i).PrintDescription();
 		}
+
+		cout << endl;
 	}
 	else
 		cout << "Shopping cart is empty" << endl << endl;

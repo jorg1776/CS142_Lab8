@@ -15,6 +15,9 @@ string ShoppingCart::GetDateCreated() { return dateCreated; }
 
 bool ShoppingCart::CheckCartForItem(string itemName)
 {
+	if (items.size() == 0) //if cart is empty
+		return false;
+
 	for (int i = 0; i < items.size(); i++)
 	{
 		if (items.at(i).GetName() == itemName)

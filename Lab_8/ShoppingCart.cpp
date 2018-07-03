@@ -37,25 +37,38 @@ void ShoppingCart::AddItemToCart(ItemToPurchase item)
 
 void ShoppingCart::RemoveItemFromCart(string itemName) 
 {
-	bool isInCart;
-	for (int i = 0; i < items.size(); i++)
+	bool isInCart = CheckCartForItem(itemName);
+
+	if (isInCart)
 	{
-		if (items.at(i).GetName() == itemName)
+		for (int i = 0; i < items.size(); i++)
 		{
-			items.erase(items.begin() + i);
+			if (items.at(i).GetName() == itemName)
+			{
+				items.erase(items.begin() + i);
+			}
 		}
 	}
+	else
+		cout << "Item not found in cart. Nothing removed." << endl;
 }
 
 void ShoppingCart::UpdateItemQuantity(string itemName, int newQuantity) 
 {
-	for (int i = 0; i < items.size(); i++)
+	bool isInCart = CheckCartForItem(itemName);
+
+	if (isInCart)
 	{
-		if (items.at(i).GetName() == itemName)
+		for (int i = 0; i < items.size(); i++)
 		{
-			items.at(i).SetQuantity(newQuantity);
+			if (items.at(i).GetName() == itemName)
+			{
+				items.at(i).SetQuantity(newQuantity);
+			}
 		}
 	}
+	else
+		cout << "Item not found in cart. Nothing modified." << endl;
 }
 
 int ShoppingCart::GetNumOfItems() 

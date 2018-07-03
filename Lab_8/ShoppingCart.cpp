@@ -63,24 +63,34 @@ double ShoppingCart::GetTotalCost()
 
 void ShoppingCart::PrintItemTotalsAndCosts() 
 {
-	cout << "Number of items: " << GetNumOfItems() << endl;
-	cout << endl;
-	
-	for (int i = 0; i < items.size(); i++)
+	if (GetNumOfItems() > 0)
 	{
-		items.at(i).PrintCost();
+		cout << "Number of items: " << GetNumOfItems() << endl;
+		cout << endl;
+	
+		for (int i = 0; i < items.size(); i++)
+		{
+			items.at(i).PrintCost();
+		}
 	}
+	else
+		cout << "Shopping cart is empty" << endl << endl;
 }
 
 void ShoppingCart::PrintItemDescriptions() 
 { 
-	cout << "Item Descriptions"<< endl;
-	cout << endl;
-
-	for (int i = 0; i < items.size(); i++)
+	if (GetNumOfItems() > 0)
 	{
-		items.at(i).PrintDescription();
+		cout << "Item Descriptions" << endl;
+		cout << endl;
+
+		for (int i = 0; i < items.size(); i++)
+		{
+			items.at(i).PrintDescription();
+		}
 	}
+	else
+		cout << "Shopping cart is empty" << endl << endl;
 } 
 
 void ShoppingCart::PrintCartDescription()

@@ -51,6 +51,8 @@ void ShoppingCart::RemoveItemFromCart(string itemName)
 	}
 	else
 		cout << "Item not found in cart. Nothing removed." << endl;
+
+	cout << endl;
 }
 
 void ShoppingCart::UpdateItemQuantity(string itemName, int newQuantity) 
@@ -69,6 +71,8 @@ void ShoppingCart::UpdateItemQuantity(string itemName, int newQuantity)
 	}
 	else
 		cout << "Item not found in cart. Nothing modified." << endl;
+
+	cout << endl;
 }
 
 int ShoppingCart::GetNumOfItems() 
@@ -89,7 +93,7 @@ double ShoppingCart::GetTotalCost()
 
 	for (int i = 0; i < items.size(); i++)
 	{
-		totalCost += items.at(i).GetPrice();
+		totalCost += items.at(i).GetPrice() * items.at(i).GetQuantity();
 	}
 
 	return totalCost;

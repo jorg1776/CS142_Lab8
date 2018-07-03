@@ -13,7 +13,24 @@ string ShoppingCart::GetCustomerName() { return customerName; }
 
 string ShoppingCart::GetDateCreated() { return dateCreated; }
 
-void ShoppingCart::AddItemToCart(ItemToPurchase item) {	items.push_back(item); }
+bool ShoppingCart::CheckCartForItem(string itemName)
+{
+	for (int i = 0; i < items.size(); i++)
+	{
+		if (items.at(i).GetName() == itemName)
+			return true;
+		else
+			return false;
+	}
+}
+
+void ShoppingCart::AddItemToCart(ItemToPurchase item) 
+{	
+	if (CheckCartForItem(item.GetName()) == false) //if item not in cart
+		items.push_back(item);
+	else
+		cout << "Item is already in cart. Nothing added." << endl << endl;
+}
 
 void ShoppingCart::RemoveItemFromCart(string itemName) 
 {

@@ -12,6 +12,7 @@ class ShoppingCart
 		ShoppingCart(string customerName = "none", string dateCreated = "January 1, 2016");
 		string GetCustomerName();
 		string GetDateCreated();
+		bool CheckCartForItem(string);
 		void AddItemToCart(ItemToPurchase);
 		void RemoveItemFromCart(string);
 		void UpdateItemQuantity(string, int);

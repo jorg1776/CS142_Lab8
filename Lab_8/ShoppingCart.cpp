@@ -32,7 +32,7 @@ void ShoppingCart::AddItemToCart(ItemToPurchase item)
 	if (CheckCartForItem(item.GetName()) == false) //if item not in cart
 		items.push_back(item);
 	else
-		cout << "Item is already in cart. Nothing added." << endl << endl;
+		cout << "Item is already in cart. Nothing added." << endl;
 }
 
 void ShoppingCart::RemoveItemFromCart(string itemName) 
